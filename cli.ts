@@ -1,6 +1,15 @@
+/**
+ * This file is meant to be run with Bun.
+ *
+ * As far as I know, setting up ts-node to run this file
+ * is a futile exercise that will send you in a downward
+ * spiral of desperation and madness.
+ *
+ * Use `bun nu.ts` instead.
+ */
 import { defineCommand, runMain } from "citty"
 import consola from "consola"
-import TestCommand from "./commands/TestCommand.js"
+import TestCommand from "./commands/TestCommand.ts"
 
 const test = defineCommand({
 	meta: {
@@ -25,8 +34,10 @@ const print = defineCommand({
 			description: "Use friendly greeting",
 		},
 	},
-	run() {
+	run(payload) {
 		consola.warn("The print command is not yet implemented")
+		consola.warn("But here are the arguments you passed:")
+		console.log(payload.rawArgs)
 	},
 })
 
