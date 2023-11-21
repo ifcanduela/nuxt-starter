@@ -1,16 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	devtools: { enabled: false },
-	devServer: {
-		port: 3000,
-	},
+	devtools: { enabled: true },
 	modules: [
-		"@nuxt/image",
-		"@nuxtjs/tailwindcss",
-		"@nuxtjs/google-fonts",
-		"@vueuse/nuxt",
-		"@pinia/nuxt",
-	],
+        "@nuxt/image",
+        "@nuxtjs/tailwindcss",
+        "@nuxtjs/google-fonts",
+        "@vueuse/nuxt",
+        "@pinia/nuxt",
+        "nuxt-phosphor-icons"
+    ],
 	image: {},
 	googleFonts: {
 		display: "swap",

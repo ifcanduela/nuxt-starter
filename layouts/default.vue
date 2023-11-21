@@ -1,5 +1,6 @@
 <template>
-	<div class="layout p-4 bg-slate-100 min-h-screen">
+	<div class="layout p-12 bg-slate-100 min-h-screen">
+		<NuxtLoadingIndicator />
 		<main>
 			<slot></slot>
 		</main>
