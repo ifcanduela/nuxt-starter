@@ -1,11 +1,7 @@
 /**
- * This file is meant to be run with Bun.
+ * This file is meant to be run with Bun or tsx.
  *
- * As far as I know, setting up ts-node to run this file
- * is a futile exercise that will send you in a downward
- * spiral of desperation and madness.
- *
- * Use `bun nu.ts` instead.
+ * Use `bun cli.ts` or `npx tsx cli.ts` instead.
  */
 import { defineCommand, runMain } from "citty"
 import consola from "consola"
