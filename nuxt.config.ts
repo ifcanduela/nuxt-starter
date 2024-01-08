@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 		"@nuxtjs/google-fonts",
 		"@vueuse/nuxt",
 		"@pinia/nuxt",
-		"nuxt-phosphor-icons",
+		"nuxt-icon",
 	],
 	image: {},
 	googleFonts: {

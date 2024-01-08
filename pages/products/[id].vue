@@ -18,7 +18,7 @@
 					</span>
 
 					<Btn @click="addToCart">
-						<PhosphorIconShoppingCartSimple />
+						<Icon name="ph:shopping-cart-simple" />
 						Add to cart
 					</Btn>
 				</div>

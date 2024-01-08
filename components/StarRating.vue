@@ -1,8 +1,13 @@
 <template>
 	<div class="flex" :title="`${rating}/5 in ${count} ratings`">
-		<PhosphorIconStar v-for="s in fullStars" weight="fill" color="gold" />
-		<PhosphorIconStarHalf v-if="halfStar" color="gold" />
-		<PhosphorIconStar v-for="s in emptyStars" color="gold" />
+		<Icon
+			name="ph:star"
+			v-for="s in fullStars"
+			weight="fill"
+			color="gold"
+		/>
+		<Icon name="ph:star-half" v-if="halfStar" color="gold" />
+		<Icon name="ph:star" v-for="s in emptyStars" color="gold" />
 	</div>
 </template>
 
