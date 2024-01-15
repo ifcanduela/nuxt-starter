@@ -1,6 +1,10 @@
 <template>
 	<PageTitle>Products</PageTitle>
 
+	<menu class="mb-4">
+		<TextInput v-model="productFilter" />
+	</menu>
+
 	<div
 		v-if="!pending"
 		class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12"
@@ -46,6 +50,22 @@
 	</div>
 </template>
 
-<script setup>
-	const { data: products, pending } = await useFetch("/api/products")
+<script setup lang="ts">
+	import { useStorage } from "@vueuse/core"
+
+	const { data, pending } = await useFetch("/api/products")
+
+	const productFilter = useStorage<string>("products.filter", "")
+
+	const products = computed(() => {
+		if (!data.value) return []
+
+		if (!productFilter.value) {
+			return data.value
+		}
+
+		const rx = new RegExp(productFilter.value, "i")
+
+		return data.value.filter((product: any) => rx.test(product.title))
+	})
 </script>
