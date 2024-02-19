@@ -1,9 +1,7 @@
 <template>
-	<div class="layout bg-slate-100 min-h-screen">
+	<div class="layout min-h-screen">
 		<NuxtLoadingIndicator />
 
-		<main>
-			<slot></slot>
-		</main>
+		<slot></slot>
 	</div>
 </template>
