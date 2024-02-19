@@ -3,13 +3,16 @@ export default defineNuxtConfig({
 	devtools: { enabled: false },
 	modules: [
 		"@nuxt/image",
-		"@nuxtjs/tailwindcss",
+		"@nuxtjs/color-mode",
 		"@nuxtjs/google-fonts",
-		"@vueuse/nuxt",
+		"@nuxtjs/tailwindcss",
 		"@pinia/nuxt",
+		"@vueuse/nuxt",
 		"nuxt-icon",
 	],
-	image: {},
+	colorMode: {
+		classSuffix: "",
+	},
 	googleFonts: {
 		display: "swap",
 		download: true,
@@ -17,4 +20,5 @@ export default defineNuxtConfig({
 			Inter: [400, 700],
 		},
 	},
+	image: {},
 })

@@ -1,23 +1,15 @@
 import { defineStore } from "pinia"
-
-type Item = {
-	name: string
-	value: number
-}
+import type { Product } from "~/utils/types"
 
 export const useTestStore = defineStore("test", () => {
-	const items = ref<Item[]>([])
+	const items = ref<Product[]>([])
 
-	fetch("/api/items")
-		.then((res) => res.json())
-		.then((data) => (items.value = data.items))
-
-	function add(name: string, value: number) {
-		items.value.push({ name, value })
-	}
+	$fetch("/api/products").then((data) => {
+		items.value = data
+		console.log(data)
+	})
 
 	return {
 		items,
-		add,
 	}
 })
