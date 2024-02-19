@@ -9,7 +9,5 @@
 </template>
 
 <script setup lang="ts">
-	import { useTestStore } from "~/composables/useTestStore"
-
 	const testStore = useTestStore()
 </script>
