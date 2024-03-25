@@ -1,8 +1,7 @@
-// ({ args }) {
-// 	console.log(`${args.friendly ? "Hi" : "Greetings"} ${args.name}!`)
-// }
-function TestCommand(cmd) {
-	console.log("TestCommand", cmd)
+import type { CommandContext } from "citty"
+
+function TestCommand(ctx: CommandContext) {
+	console.log(ctx.args)
 }
 
 export default TestCommand
