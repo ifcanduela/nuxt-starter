@@ -20,5 +20,21 @@ export default defineNuxtConfig({
 			Inter: [400, 700],
 		},
 	},
-	image: {},
+	image: {
+		presets: {
+			avatar: {
+				modifiers: {
+					format: "jpg",
+					width: 50,
+					height: 50,
+				},
+			},
+			thumbnail: {
+				modifiers: {
+					width: 75,
+					height: 75,
+				},
+			},
+		},
+	},
 })
