@@ -2,17 +2,27 @@
 	<PageWrapper>
 		<PageTitle>Products</PageTitle>
 
-		<article v-for="product in testStore.items" class="mb-4">
-			<header>
-				<NuxtImg
-					preset="thumbnail"
-					densities="1x 2x"
-					:src="product.image"
-				/>
-			</header>
+		<div class="grid grid-cols-4 gap-8">
+			<article
+				v-for="product in testStore.items"
+				class="flex flex-col gap-4 items-center justify-start"
+			>
+				<header>
+					<NuxtImg
+						preset="thumbnail"
+						densities="1x 2x"
+						class="w-40 h-40 object-cover"
+						:src="product.image"
+					/>
+				</header>
 
-			<main>{{ product.title }} (€{{ product.price }})</main>
-		</article>
+				<main>
+					<NuxtLink :to="`/product/${product.id}`">
+						{{ product.title }} (€{{ product.price }})
+					</NuxtLink>
+				</main>
+			</article>
+		</div>
 	</PageWrapper>
 </template>
 

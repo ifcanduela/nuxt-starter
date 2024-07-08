@@ -1,10 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+	compatibilityDate: "2024-07-08",
 	devtools: { enabled: false },
 	modules: [
 		"@nuxt/image",
+		"@nuxt/fonts",
 		"@nuxtjs/color-mode",
-		"@nuxtjs/google-fonts",
 		"@nuxtjs/tailwindcss",
 		"@pinia/nuxt",
 		"@vueuse/nuxt",
@@ -13,14 +14,8 @@ export default defineNuxtConfig({
 	colorMode: {
 		classSuffix: "",
 	},
-	googleFonts: {
-		display: "swap",
-		download: true,
-		families: {
-			Inter: [400, 700],
-		},
-	},
 	image: {
+		domains: ["fakestoreapi.com"],
 		presets: {
 			avatar: {
 				modifiers: {
@@ -31,8 +26,8 @@ export default defineNuxtConfig({
 			},
 			thumbnail: {
 				modifiers: {
-					width: 75,
-					height: 75,
+					width: 160,
+					height: 160,
 				},
 			},
 		},
