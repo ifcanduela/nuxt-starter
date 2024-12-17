@@ -3,8 +3,7 @@
 </template>
 
 <script setup lang="ts">
-	const testStore = useTestStore()
-	const productId = Number(useRoute().params.id)
+	const { id } = useRoute().params
 
-	const product = testStore.getItemById(productId)
+	const { data: product } = useLazyFetch(`/api/products/${id}`)
 </script>

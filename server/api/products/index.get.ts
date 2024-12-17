@@ -1,4 +1,4 @@
-import type { Product } from "~/utils/types"
+import { type Product } from "~~/utils/types"
 
 export default defineEventHandler(async (event) => {
 	const query = getQuery(event)

@@ -7,9 +7,8 @@ export default defineNuxtConfig({
 		"@nuxt/fonts",
 		"@nuxtjs/color-mode",
 		"@nuxtjs/tailwindcss",
-		"@pinia/nuxt",
 		"@vueuse/nuxt",
-		"nuxt-icon",
+		"@nuxt/icon",
 	],
 	colorMode: {
 		classSuffix: "",

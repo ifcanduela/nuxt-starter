@@ -4,7 +4,7 @@
 
 		<div class="grid grid-cols-4 gap-8">
 			<article
-				v-for="product in testStore.items"
+				v-for="product in items"
 				class="flex flex-col gap-4 items-center justify-start"
 			>
 				<header>
@@ -27,5 +27,5 @@
 </template>
 
 <script setup lang="ts">
-	const testStore = useTestStore()
+	const { data: items, status } = useLazyFetch("/api/products")
 </script>
