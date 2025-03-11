@@ -5,10 +5,11 @@ export default defineNuxtConfig({
 	modules: [
 		"@nuxt/image",
 		"@nuxt/fonts",
+		"@nuxt/icon",
+		"@nuxt/eslint",
 		"@nuxtjs/color-mode",
 		"@nuxtjs/tailwindcss",
 		"@vueuse/nuxt",
-		"@nuxt/icon",
 	],
 	colorMode: {
 		classSuffix: "",

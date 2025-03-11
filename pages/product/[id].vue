@@ -1,9 +1,29 @@
 <template>
-	<pre><code>{{ product }}</code></pre>
+	<PageWrapper>
+		<PageTitle>{{ product?.title }}</PageTitle>
+
+		<main>
+			<menu class="mb-8">
+				<PrimaryButton to="/" icon="ph:house-fill">Home</PrimaryButton>
+			</menu>
+
+			<article>
+				<pre
+					class="bg-neutral-50 rounded p-4"
+				><code>{{ product }}</code>
+				</pre>
+			</article>
+		</main>
+	</PageWrapper>
 </template>
 
 <script setup lang="ts">
 	const { id } = useRoute().params
 
 	const { data: product } = useLazyFetch(`/api/products/${id}`)
+
+	useHead({
+		title: product.value?.title,
+		description: product.value?.description,
+	})
 </script>

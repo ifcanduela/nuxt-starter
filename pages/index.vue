@@ -2,10 +2,12 @@
 	<PageWrapper>
 		<PageTitle>Products</PageTitle>
 
-		<div class="grid grid-cols-4 gap-8">
-			<article
+		<div class="flexible-grid gap-8 w-full">
+			<NuxtLink
 				v-for="product in items"
-				class="flex flex-col gap-4 items-center justify-start"
+				:key="product.id"
+				:to="`/product/${product.id}`"
+				class="flex flex-col gap-4 items-center justify-start hover:bg-yellow-100"
 			>
 				<header>
 					<NuxtImg
@@ -16,16 +18,28 @@
 					/>
 				</header>
 
-				<main>
-					<NuxtLink :to="`/product/${product.id}`">
-						{{ product.title }} (€{{ product.price }})
-					</NuxtLink>
-				</main>
-			</article>
+				<main>{{ product.title }} (€{{ product.price }})</main>
+			</NuxtLink>
+		</div>
+
+		<div class="fixed p-2 bottom-2 left-2 bg-black text-yellow-200">
+			{{ status }}
 		</div>
 	</PageWrapper>
 </template>
 
 <script setup lang="ts">
 	const { data: items, status } = useLazyFetch("/api/products")
+
+	useHead({
+		title: "Products",
+		description: "List of products",
+	})
 </script>
+
+<style scoped>
+	.flexible-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	}
+</style>
