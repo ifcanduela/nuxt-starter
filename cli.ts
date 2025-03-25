@@ -4,7 +4,7 @@
  * Use `bun cli.ts` or `npx tsx cli.ts` instead.
  */
 import { defineCommand, runMain } from "citty"
-import consola from "consola"
+import { consola } from "consola"
 import TestCommand from "./commands/TestCommand.ts"
 
 const main = defineCommand({
