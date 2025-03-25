@@ -9,7 +9,7 @@
 
 			<article>
 				<pre
-					class="bg-neutral-50 rounded p-4"
+					class="bg-neutral-50 rounded p-4 whitespace-pre-wrap"
 				><code>{{ product }}</code>
 				</pre>
 			</article>
@@ -22,7 +22,7 @@
 
 	const { data: product } = useLazyFetch(`/api/products/${id}`)
 
-	useHead({
+	useSeoMeta({
 		title: product.value?.title,
 		description: product.value?.description,
 	})

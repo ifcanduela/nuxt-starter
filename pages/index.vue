@@ -31,7 +31,7 @@
 <script setup lang="ts">
 	const { data: items, status } = useLazyFetch("/api/products")
 
-	useHead({
+	useSeoMeta({
 		title: "Products",
 		description: "List of products",
 	})
