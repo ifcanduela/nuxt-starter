@@ -5,7 +5,7 @@
  */
 import { defineCommand, runMain } from "citty"
 import { consola } from "consola"
-import TestCommand from "./commands/TestCommand.ts"
+import TestCommand from "~/commands/TestCommand.ts"
 
 const main = defineCommand({
 	meta: {
