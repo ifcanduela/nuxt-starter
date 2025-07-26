@@ -1,4 +1,4 @@
-import type { Product } from "~/utils/types"
+import type { Product } from "@@/shared/types"
 
 const items = ref<Product[]>([])
 
