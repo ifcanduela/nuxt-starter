@@ -1,19 +1,29 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from "@tailwindcss/vite"
+
 export default defineNuxtConfig({
 	compatibilityDate: "2024-07-08",
+
 	devtools: { enabled: false },
+
+	vite: {
+		plugins: [tailwindcss()],
+	},
+
 	modules: [
 		"@nuxt/image",
 		"@nuxt/fonts",
 		"@nuxt/icon",
 		"@nuxt/eslint",
 		"@nuxtjs/color-mode",
-		"@nuxtjs/tailwindcss",
 		"@vueuse/nuxt",
 	],
+
+	css: ["./app/assets/css/global.css"],
+
 	colorMode: {
 		classSuffix: "",
 	},
+
 	image: {
 		domains: ["fakestoreapi.com"],
 		presets: {

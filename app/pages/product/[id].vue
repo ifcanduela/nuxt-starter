@@ -20,7 +20,7 @@
 <script setup lang="ts">
 	const { id } = useRoute().params
 
-	const { data: product } = useLazyFetch(`/api/products/${id}`)
+	const { data: product } = useFetch(`/api/products/${id}`)
 
 	useSeoMeta({
 		title: product.value?.title,

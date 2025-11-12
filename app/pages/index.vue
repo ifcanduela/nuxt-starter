@@ -2,9 +2,9 @@
 	<PageWrapper>
 		<PageTitle>Products</PageTitle>
 
-		<div class="flexible-grid gap-8 w-full">
+		<div class="container mx-auto flexible-grid gap-8 w-full">
 			<NuxtLink
-				v-for="product in items"
+				v-for="product in products"
 				:key="product.id"
 				:to="`/product/${product.id}`"
 				class="flex flex-col gap-4 items-center justify-start hover:bg-yellow-100"
@@ -21,15 +21,11 @@
 				<main>{{ product.title }} (€{{ product.price }})</main>
 			</NuxtLink>
 		</div>
-
-		<div class="fixed p-2 bottom-2 left-2 bg-black text-yellow-200">
-			{{ status }}
-		</div>
 	</PageWrapper>
 </template>
 
 <script setup lang="ts">
-	const { data: items, status } = useLazyFetch("/api/products")
+	const { data: products } = useFetch("/api/products")
 
 	useSeoMeta({
 		title: "Products",
