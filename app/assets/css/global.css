@@ -9,6 +9,10 @@
 	}
 }
 
+@theme {
+	--font-sans: "Inter", sans-serif;
+}
+
 @utility grid-flex {
 	grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
 }
